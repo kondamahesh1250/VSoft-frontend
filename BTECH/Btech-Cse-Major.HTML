@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSE Major Projects</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    body {
+      background: url('./bcsemajor.jpg') no-repeat center center fixed;
+      background-size: cover;
+      animation: moveBg 30s linear infinite;
+      margin: 0;
+    }
+
+    @keyframes moveBg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-top: 40px;
+      text-align: center;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-card {
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .custom-card::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: linear-gradient(45deg, #ff4b2b, #ff416c, #ffe600);
+      z-index: -1;
+      border-radius: 20px;
+      animation: shineBorder 4s linear infinite;
+    }
+
+    @keyframes shineBorder {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .custom-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .custom-card .btn {
+      background: linear-gradient(to right, #ffe600, #ff4b2b);
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .custom-card .btn:hover {
+      background: linear-gradient(to left, #ff4b2b, #ffe600);
+      color: #000;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .modal-content form input,
+    .modal-content form select,
+    .modal-content form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .register-btn {
+      background-color: #ff4b2b;
+      color: #fff !important;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .register-btn:hover {
+      background-color: #ff1c00;
+    }
+  </style>
+</head>
+
+<body>
+   <nav class="navbar">
+    <a href="../index.html" class="navbar-logo">
+      <img src="../logo.webp" alt="VSoft Solutions Pvt Ltd Logo"
+        style="height:48px; width:auto; display:block; object-fit:contain;" />
+    </a>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="../index.html" class="nav1">Home</a>
+      <a href="../Aboutus.html" class="nav2">About Us</a>
+      <div class="dropdown">
+        <a href="./BTECH/BtechProjects.html" class="dropbtn" id="nav3">B.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">EEE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CIVIL</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">MECH</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="../MTech A.html" class="dropbtn" id="nav4">M.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Power Systems</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Structural Engineering</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../MBA.html" class="nav5">MBA Projects</a>
+      <a href="../MCA.html" class="nav6">MCA Projects</a>
+      <a href="../C&I.html" class="nav7">Internship Programs&Corporate</a>
+      <a href="../Registerpage.html" class="register-btn">Register Now</a>
+    </div>
+  </nav>
+  <!-- Section Title -->
+  <h2 class="section-title">CSE-MAJOR PROJECTS TECHNOLOGIES</h2>
+
+  <!-- Cards -->
+  <div class="container py-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 mt-4">
+      
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body">
+            <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+            <h6>Web Development</h6>
+            <a class="btn mt-2" href="../projectview.html?degree=BTECH&branch=CSE&type=Major&domain=Web-Development">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body">
+            <i class="fas fa-robot fa-3x text-danger mb-3"></i>
+            <h6>AI / ML</h6>
+            <a class="btn mt-2" href="../projectview.html?degree=BTECH&branch=CSE&type=Major&domain=AI-ML">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body">
+            <i class="fas fa-cloud fa-3x text-info mb-3"></i>
+            <h6>Cloud Computing</h6>
+            <a class="btn mt-2" href="../projectview.html?degree=BTECH&branch=CSE&type=Major&domain=Cloud-Computing">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body">
+            <i class="fas fa-mobile-alt fa-3x text-success mb-3"></i>
+            <h6>App Development</h6>
+            <a class="btn mt-2" href="../projectview.html?degree=BTECH&branch=CSE&type=Major&domain=App-Development">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body">
+            <i class="fas fa-user-shield fa-3x text-warning mb-3"></i>
+            <h6>Cyber Security</h6>
+            <a class="btn mt-2" href="../projectview.html?degree=BTECH&branch=CSE&type=Major&domain=Cyber-Security">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+   <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Register Now</h2>
+      <form id="registerForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" maxlength="10" />
+        <input type="email" name="email" placeholder="Gmail" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com" />
+        <select name="course" required>
+          <option value="" disabled selected>Select Course</option>
+          <option value="B.TECH">B.TECH</option>
+          <option value="M.TECH">M.TECH</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="registerSuccess" style="display:none; color:green; margin-top:10px;">Thank you for registering!</div>
+    </div>
+  </div>
+  </div>
+
+<script src="../index.js"></script>
+</body>
+</html>

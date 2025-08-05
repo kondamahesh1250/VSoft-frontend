@@ -1,0 +1,32 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 180px;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #212529;
+}
+
+.card i {
+  color: #e63946;
+  transition: color 0.3s ease;
+}
+
+.card:hover i {
+  color: #d90429;
+}

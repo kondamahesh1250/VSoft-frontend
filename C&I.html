@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Corporate Training & Internships</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    .section {
+      display: none;
+      padding: 40px 20px;
+    }
+
+    .active-section {
+      display: block;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .custom-card {
+      width: 270px;
+      height: 330px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .custom-card img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .custom-card h5 {
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #34495e;
+    }
+
+    .custom-card button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .custom-card button:hover {
+      background-color: #21618c;
+    }
+
+    .back-btn {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .back-btn button {
+      background-color: #7f8c8d;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+    }
+
+    .back-btn button:hover {
+      background-color: #566573;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!---navabar-->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <img src="./logo.webp" alt="VSoft Solutions Pvt Ltd Logo"
+        style="height:48px; width:auto; display:block; object-fit:contain;" />
+    </a>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="./index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <div class="dropdown">
+        <a href="B.Tech Projects.html" class="dropbtn">B.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">EEE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CIVIL</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">MECH</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="MTech A.html" class="dropbtn">M.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Power Systems</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Structural Engineering</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="MBA.html">MBA Projects</a>
+      <a href="MCA.html">MCA Projects</a>
+      <a href="C&I.html">Internship Programs&Corporate</a>
+      <a href="#" class="register-btn" id="registerBtn">Register Now</a>
+    </div>
+  </nav>
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Register Now</h2>
+      <form id="registerForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" maxlength="10" />
+        <input type="email" name="email" placeholder="Gmail" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com" />
+        <select name="course" required>
+          <option value="" disabled selected>Select Course</option>
+          <option value="B.TECH">B.TECH</option>
+          <option value="M.TECH">M.TECH</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="registerSuccess" style="display:none; color:green; margin-top:10px;">Thank you for registering!</div>
+    </div>
+  </div>
+  <!-- Home Section -->
+  <div id="home" class="section active-section">
+    <div class="heading">Choose Your Program</div>
+    <div class="card-container">
+      <div class="custom-card">
+        <img src="corporate.jpg" alt="Corporate Training">
+        <h5>Corporate Training</h5>
+        <button onclick="showSection('corporate')">Explore</button>
+      </div>
+      <div class="custom-card">
+        <img src="internship.jpg" alt="Internship">
+        <h5>Internship Programming</h5>
+        <button onclick="showSection('internship')">Explore</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Training Section -->
+  <div id="corporate" class="section">
+    <div class="heading">Corporate Training Programs</div>
+    <div class="card-container">
+      <div class="custom-card">
+        <img src="soft&communication.png" alt="Soft Skills">
+        <h5>Soft Skills & Communication</h5>
+        <button>View Details</button>
+      </div>
+      <div class="custom-card">
+        <img src="excel.png" alt="Excel">
+        <h5>Excel & Data Analytics</h5>
+        <button>View Details</button>
+      </div>
+      <div class="custom-card">
+        <img src="leadership.png" alt="Leadership">
+        <h5>Leadership & Team Building</h5>
+        <button>View Details</button>
+      </div>
+      <div class="custom-card">
+        <img src="business.png" alt="Business">
+        <h5>Business Etiquette</h5>
+        <button>View Details</button>
+      </div>
+    </div>
+    <div class="back-btn">
+      <button onclick="showSection('home')">⬅ Back</button>
+    </div>
+  </div>
+
+  <!-- Internship Programming Section -->
+  <div id="internship" class="section">
+    <div class="heading">Internship Programming Areas</div>
+    <div class="card-container">
+      <div class="custom-card">
+        <img src="webdevelopement1.png" alt="Web">
+        <h5>Web Development</h5>
+        <button>View Projects</button>
+      </div>
+      <div class="custom-card">
+        <img src="python&django.webp" alt="Python">
+        <h5>Python with Django</h5>
+        <button>View Projects</button>
+      </div>
+      <div class="custom-card">
+        <img src="ai&ml.png" alt="AI">
+        <h5>AI & Machine Learning</h5>
+        <button>View Projects</button>
+      </div>
+      <div class="custom-card">
+        <img src="mobiledevelopement.png" alt="Mobile">
+        <h5>Mobile App Development</h5>
+        <button>View Projects</button>
+      </div>
+      <div class="custom-card">
+        <img src="spring.png" alt="java&springboot">
+        <h5>Java&SpringBoot</h5>
+        <button>View Projects</button>
+      </div>
+    </div>
+    <div class="back-btn">
+      <button onclick="showSection('home')">⬅ Back</button>
+    </div>
+  </div>
+
+  <!-- JavaScript to switch sections -->
+  <script>
+    function showSection(id) {
+      const all = document.querySelectorAll('.section');
+      all.forEach(function (each) {
+        each.classList.remove('active-section');
+      });
+      const target = document.getElementById(id);
+      target.classList.add('active-section');
+    }
+  </script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>

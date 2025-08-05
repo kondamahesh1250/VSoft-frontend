@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./index.css">
+  <style>
+
+    table {
+      width: 95vw;
+      border-collapse: collapse;
+      margin: 20px;
+      border: 2px solid;
+      /* background-color: #fff; */
+      background-color: rgb(63, 59, 59);
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border: 4px solid #ccc;
+      font-weight: 100;
+      color: white;
+      /* border: 2px solid; */
+      /* text-align: center; */
+    }
+
+    th {
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      font-weight: bold;
+    }
+
+    td:hover{
+      color: rgb(225, 210, 41);
+      transform: translateX(15px);
+      cursor: pointer;
+    }
+
+    /* table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    } */
+
+
+    @media (max-width: 768px) {
+
+      table {
+        font-size: 14px;
+        overflow-x: auto;
+        display: block;
+      }
+    }
+
+    #title {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 2rem;
+      color: #333;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 2rem;
+      /* Responsive font size */
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background-color: #343a40;
+      transition: width 0.4s ease-in-out;
+    }
+
+    .section-title:hover::after {
+      width: 100%;
+    }
+
+    .top-content {
+      width: 100%;
+      height: auto;
+      min-height: 25vh;
+      margin-top: 50px;
+      border-radius: 10px;
+      background-color: #969ca2;
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center;
+      background-image: url("./img17.avif");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .top-content h2 {
+      font-size: 1.8rem;
+      margin-top: 60px;
+      color: #fff;
+    }
+
+    /* 📱 Responsive Adjustments */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .top-content {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .top-content h2 {
+        margin-left: 0;
+        font-size: 1.5rem;
+      }
+    }
+
+
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-150px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    .animate-left {
+      animation: slideInLeft 1s ease forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <img src="./logo.webp" alt="VSoft Solutions Pvt Ltd Logo"
+        style="height:48px; width:auto; display:block; object-fit:contain;" />
+    </a>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="./index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <div class="dropdown">
+        <a href="B.Tech Projects.html" class="dropbtn">B.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">EEE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CIVIL</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">MECH</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="MTech A.html" class="dropbtn">M.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Power Systems</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Structural Engineering</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="MBA.html">MBA Projects</a>
+      <a href="MCA.html">MCA Projects</a>
+      <a href="C&I.html">Internship Programs&Corporate</a>
+      <a href="#" class="register-btn" id="registerBtn">Register Now</a>
+    </div>
+  </nav>
+
+  <div class="top-content animate-left">
+    <h2 class="section-title" id="title"></h2>
+  </div>
+
+  <!-- <div id="title" class="animate-left"></div> -->
+  <div id="result" class="animate-left"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const degree = params.get('degree');
+    const branch = params.get('branch');
+    const type = params.get('type');
+    const domain = params.get('domain');
+
+    document.getElementById('title').textContent = `${degree} ${branch} ${type} - ${domain} Projects`;
+ 
+    async function getProjects() {
+      let response = await fetch(`https://vsoft.onrender.com/api/projects/${degree}/${branch}/${type}/${domain}`);
+      let data = await response.json();
+
+      let table = document.createElement("table");
+      let row = document.createElement("tr");
+      let th = document.createElement("th");
+      th.textContent = "TITLE";
+      th.style.fontSize = "30px"
+      row.appendChild(th);
+      table.appendChild(row);
+
+      data.forEach(res => {
+        let row = document.createElement("tr");
+
+        ["title"].forEach(key => {
+          let td = document.createElement("td");
+          td.textContent = res[key];
+          row.appendChild(td);
+        });
+
+        table.appendChild(row);
+      });
+
+      document.getElementById("result").appendChild(table);
+    }
+
+    getProjects();
+  </script>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

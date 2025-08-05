@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>B.Tech CSE Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./project-style.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<style>
+  .section-title {
+    font-weight: bold;
+    margin-top: 2rem;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2rem;
+    /* Responsive font size */
+    text-align: center;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #343a40;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .section-title:hover::after {
+    width: 100%;
+  }
+
+  .top-content {
+    width: 100%;
+    height: auto;
+    min-height: 25vh;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: #969ca2;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    background-image: url("./img4.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+  .top-content h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    margin-top: 80px;
+    color: #fff;
+  }
+
+  /* 📱 Responsive Adjustments */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .top-content {
+      padding: 1.5rem 1rem;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .top-content h2 {
+      margin-left: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-150px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .animate-left {
+    animation: slideInLeft 1s ease forwards;
+    opacity: 0;
+  }
+</style>
+
+<body>
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <img src="./logo.webp" alt="VSoft Solutions Pvt Ltd Logo"
+        style="height:48px; width:auto; display:block; object-fit:contain;" />
+    </a>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="navbar.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <div class="dropdown">
+        <a href="B.Tech Projects.html" class="dropbtn">B.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">EEE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CIVIL</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">MECH</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="MTech A.html" class="dropbtn">M.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Power Systems</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Structural Engineering</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="MBA.html">MBA Projects</a>
+      <a href="MCA.html">MCA Projects</a>
+      <a href="C&I.html">Internship Programs&Corporate</a>
+      <a href="#" class="register-btn" id="registerBtn">Register Now</a>
+    </div>
+  </nav>
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Register Now</h2>
+      <form id="registerForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" maxlength="10" />
+        <input type="email" name="email" placeholder="Gmail" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com" />
+        <select name="course" required>
+          <option value="" disabled selected>Select Course</option>
+          <option value="B.TECH">B.TECH</option>
+          <option value="M.TECH">M.TECH</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="registerSuccess" style="display:none; color:green; margin-top:10px;">Thank you for registering!</div>
+    </div>
+  </div>
+
+  <div class="top-content animate-left">
+    <h2 class="section-title">CSE PROJECT TYPES</h2>
+  </div>
+
+  <div class="container animate-left d-flex gap-5">
+    <div class="card-grid">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-bolt"></i>
+          <h4 class="card-title">CSE</h4>
+          <!-- <p class="card-text">Computer Science Engineering Projects</p> -->
+          <div class="card-buttons">
+            <a href="cse-major-projects.html" class="btn btn-primary btn">Major projects</a>
+            <!-- <a href="cse-mini.projects.html" class="btn btn-primary btn">Mini projects</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-bolt"></i>
+          <h4 class="card-title">CSE</h4>
+          <!-- <p class="card-text">Computer Science Engineering Projects</p> -->
+          <div class="card-buttons">
+            <!-- <a href="cse-major-projects.html" class="btn btn-primary btn">Major projects</a> -->
+            <a href="cse-mini.projects.html" class="btn btn-primary btn">Mini projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="navbar.project.js">
+
+    const modal = document.getElementById("registerModal");
+    const btn = document.getElementById("registerBtn");
+    const span = document.getElementById("closeModal");
+
+    btn.onclick = function () {
+      modal.style.display = "flex";
+    }
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+<script src="./index.js"></script>
+
+</html>

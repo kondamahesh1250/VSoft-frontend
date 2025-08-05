@@ -1,0 +1,14 @@
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* lift on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* shadow on hover */
+}
+
+.card:active {
+  transform: scale(0.98); /* press effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* deeper shadow on click */
+}

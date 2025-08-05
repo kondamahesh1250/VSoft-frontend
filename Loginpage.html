@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page with Animation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.55);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .login-container {
+      max-width: 420px;
+      background: white;
+      padding: 30px;
+      margin: 60px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+      display: none;
+      animation: fadeSlide 1s ease forwards;
+    }
+
+    .login-title {
+      text-align: center;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
+
+    .form-check-label {
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Loader styles */
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+      color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <!-- Loader -->
+  <div class="loader-wrapper" id="loader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div class="login-container" id="loginBox">
+    <h3 class="login-title">User Login</h3>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" required />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="forgotCheck" />
+        <label class="form-check-label" for="forgotCheck">Forgot password?</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Show login after loading
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('loader');
+      const loginBox = document.getElementById('loginBox');
+
+      setTimeout(function () {
+        loader.style.display = 'none';
+        loginBox.style.display = 'block';
+      }, 2000); // 2 seconds loading
+    });
+
+    // Handle form submission
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (email === '' || password === '') {
+        alert('Please fill in all fields.');
+        return;
+      }
+      const formData = new URLSearchParams();
+      formData.append("email", email);
+      formData.append("password", password);
+
+      // console.log(formData)
+
+      fetch("http://localhost:8080/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData,
+      })
+        .then(res => res.text())
+        .then(msg => {
+          // alert(msg)
+          if(msg){
+            alert(msg)
+            window.location.href = "./navbar.html";
+          }
+        }
+      )
+        
+        .catch(err => alert("Login failed: " + err.message));
+    });
+  </script>
+</body>
+
+</html>

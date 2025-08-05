@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project Types</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    h2 {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    hr {
+      height: 3px;
+    }
+
+    .custom-card {
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-btn {
+      background-color: #0d6efd; ;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+    }
+
+    .custom-btn:hover {
+      background-color: #0d6efd; ;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    i {
+      color: #0d6efd; ;
+    }
+  </style>
+
+  <script>
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const dept = urlParams.get("dept")?.toUpperCase() || "PROJECT";
+      document.getElementById("project-heading").innerText = `${dept} TYPES`;
+    }
+  </script>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <img src="./logo.webp"
+        alt="VSoft Solutions Pvt Ltd Logo" style="height:48px; width:auto; display:block; object-fit:contain;" />
+    </a>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="./index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <div class="dropdown">
+        <a href="B.Tech Projects.html" class="dropbtn">B.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">EEE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CIVIL</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">MECH</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="MTech A.html" class="dropbtn">M.Tech Projects</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#" class="submenu-btn">CSE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">ECE</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Power Systems</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#" class="submenu-btn">Structural Engineering</a>
+            <div class="submenu-content">
+              <a href="#">Mini Projects</a>
+              <a href="#">Major Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="MBA.html">MBA Projects</a>
+      <a href="MCA.html">MCA Projects</a>
+      <a href="C&I.html">Internship Programs&Corporate</a>
+      <a href="#" class="register-btn" id="registerBtn">Register Now</a>
+    </div>
+  </nav>
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Register Now</h2>
+      <form id="registerForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Mobile Number" required pattern="[0-9]{10}" maxlength="10" />
+        <input type="email" name="email" placeholder="Gmail" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com" />
+        <select name="course" required>
+          <option value="" disabled selected>Select Course</option>
+          <option value="B.TECH">B.TECH</option>
+          <option value="M.TECH">M.TECH</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="registerSuccess" style="display:none; color:green; margin-top:10px;">Thank you for registering!</div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h2 id="project-heading" class="text-dark text-center mb-2">
+      <span>PROJECT</span> <span class="text-primary">TYPES</span>
+    </h2>
+    <hr class="border-primary border-2 opacity-100 w-25 mx-auto mb-4">
+
+    <div class="row row-cols-1 row-cols-sm-2 g-4 mt-4">
+
+      <!-- Major Project -->
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <i class="fas fa-chart-line fa-3x mb-3"></i>
+              <h5 class="card-title">Major Projects</h5>
+            </div>
+            <div class="mt-auto">
+              <a href="MTech CSE major.html" class="btn custom-btn">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Project -->
+      <div class="col">
+        <div class="card text-center custom-card h-100">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <i class="fas fa-drafting-compass fa-3x mb-3"></i>
+              <h5 class="card-title text-black">Mini Projects</h5>
+            </div>
+            <div class="mt-auto">
+              <a href="MTech CSE mini.html" class="btn custom-btn">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<script src="./index.js"></script>
+</body>
+
+</html>
